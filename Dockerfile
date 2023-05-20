@@ -1,40 +1,10 @@
-##########
-# BUILDER#
-##########
-
-# pull official base image
-FROM node:16.5.0-alpine as builder
-
-# set working directory
-WORKDIR /usr/src/app
-
-#add "usr/src/app/node_modules/.bin" to $PATH
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
-
-# install and cache app dependencies
+FROM node:18 as builder
+WORKDIR /app
 COPY package.json .
-COPY package-lock.json .
-RUN npm ci
-
-# create build
+RUN npm install
 COPY . .
 RUN npm run build
 
-########
-#FINAL##
-########
-
-# base image
-FROM nginx:1.19.4-alpine
-
-# update nginx
-RUN rm -rf /etc/nginx/conf.d
-COPY conf /etc/nginx
-
-COPY --from=builder /usr/src/app/build /usr/share/nginx/html
-
-#expose port
+FROM nginx
 EXPOSE 80
-
-# run nginx
-CMD [ "nginx", "-g", "daemon off;" ]
+COPY --from=builder /app/build /usr/share/nginx/html

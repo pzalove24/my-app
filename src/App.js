@@ -12,6 +12,9 @@ function App() {
         <p>
           Hello World This is my first_DevOps App
         </p>
+        <p>
+          This is just a test to confirm that CI/CD is successful
+        </p>
         <a
           className="App-link"
           href="https://reactjs.org"

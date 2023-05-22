@@ -27,9 +27,10 @@ function App() {
         <p>
           <Button variant="contained"><code>src/App.js</code></Button>
           &nbsp;&nbsp;<Button 
-            variant="outlined" 
+            variant="contained" 
             href='https://github.com/pzalove24' 
-            target='blank'>
+            target='blank'
+            >
             Github
           </Button>
         </p>

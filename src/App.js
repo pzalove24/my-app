@@ -1,14 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import Button from '@mui/material/Button'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
         <p>
           Hello World This is my first_DevOps App
         </p>
@@ -26,6 +24,15 @@ function App() {
         >
           Learn React in a practical way
         </a>
+        <p>
+          <Button variant="contained"><code>src/App.js</code></Button>
+          &nbsp;&nbsp;<Button 
+            variant="outlined" 
+            href='https://github.com/pzalove24' 
+            target='blank'>
+            Github
+          </Button>
+        </p>
       </header>
     </div>
   );

@@ -15,6 +15,9 @@ function App() {
         <p>
           This is just a test to confirm that CI/CD is successful
         </p>
+        <p>
+          the application for DevOps CI/CD integration and deployment on AWS s3
+        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
